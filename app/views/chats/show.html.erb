@@ -1,0 +1,15 @@
+<% content_for :head do %>
+  <meta name="chat" content="<%= chat.id %>" %>
+<% end %>
+<h1><%= chat_name(chat) %></h1>
+
+<%= div_for chat do %>
+  <div id="user_typing"></div>
+<% end %>
+
+<%= form_for Message.new(chat: chat, user: current_user), url: '#' do |f| %>
+  <%= f.text_field :content, data: { behavior: 'speaker' } %>
+<% end %>
+
+<%= link_to 'Edit', edit_chat_path(chat) %> |
+<%= link_to 'Back', chats_path %>

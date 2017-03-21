@@ -1,0 +1,7 @@
+<% users = @typing_users.filter( (u)-> u.id != gon.current_user_id ) %>
+<% last_user = users.pop() %>
+<p>
+<% for user in users: %>
+  <%= user.email %>, 
+<% end %>
+<% if last_user: %><% if users.length > 0: %>and <% end %><%= last_user.email %> is typing...<% end %>&nbsp;</p>
