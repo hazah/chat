@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on 'keypress submit', '[data-behavior~=speaker], #new_message', (event) ->
+$(document).on 'keypress', '[data-behavior~=speaker]', (event) ->
   if event.keyCode is 13 # return = send
     Channels.chat.speak event.target.value
     event.target.value = ""

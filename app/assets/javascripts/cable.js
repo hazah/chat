@@ -5,11 +5,11 @@
 //= require_self
 //= require_tree ./channels
 
-(function() {
-  this.Channels || (this.Channels = {});
+jQuery(document).on('turbolinks:load', function() {
+  window.Channels || (window.Channels = {});
   
   if (gon.current_user_id) {
     Channels.cable = ActionCable.createConsumer();
   }
 
-}).call(this);
+});

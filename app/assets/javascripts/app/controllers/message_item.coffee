@@ -1,11 +1,12 @@
-class MessageItem extends Spine.Controller
-  constructor: ->
-    super
+$(document).on 'turbolinks:load', ->
+  class MessageItem extends Spine.Controller
+    constructor: ->
+      super
 
-  render: =>
-    @html(@template(@message))
+    render: =>
+      @html(@template(@message))
 
-  template: (messages) ->
-    @view('messages')(messages)
+    template: (messages) ->
+      @view('messages')(messages)
 
-window.MessageItem = MessageItem
+  window.MessageItem = MessageItem
